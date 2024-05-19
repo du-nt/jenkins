@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     def counter = load 'counter.groovy'
-                    counter.printCounter('Hello, Jenkins!')
+                    def result = counter.printCounter('Hello, Jenkins!')
                     
                     // Use the returned parameters
                     echo "Function returned status: ${result.status}"
