@@ -4,7 +4,7 @@ pipeline {
         stage('Call Common Function') {
             steps {
                 script {
-                    def counter = load 'vars/counter.groovy'
+                    def counter = load 'counter.groovy'
                     counter.printCounter('Hello, Jenkins!')
                     
                     // Call the function and get the result
