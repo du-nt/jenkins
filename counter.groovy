@@ -4,7 +4,7 @@ def credentials = CredentialsProvider.lookupCredentials(
     Jenkins.instance
 );
 
-def cred = credentials.findResult { it.id == "text" ? it : null }
+// def cred = credentials.findResult { it.id == "text" ? it : null }
 def printCounter(String param) {
     echo "Common function called with parameter: ${param}"
 
@@ -13,7 +13,7 @@ def printCounter(String param) {
     
     env.NAME = "hello cong san"
     echo "The vdfsdfdsfE_VAR is: ${env.NAME}"
-    echo "Txxxxxxxxxxxxxxxxxxxxx ${cred}"
+    echo "Txxxxxxxxxxxxxxxxxxxxx ${credentials}"
     // Return some parameters
     return [status: 'SUCCESS', message: 'Function executed successfully']
 }
