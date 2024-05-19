@@ -3,3 +3,5 @@ def printCounter(String param) {
     // Return some parameters
     return [status: 'SUCCESS', message: 'Function executed successfully']
 }
+
+return this;
