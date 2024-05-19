@@ -8,7 +8,7 @@ def creds = CredentialsProvider.lookupCredentials(
 
 for (c in creds) {
   fp = CredentialsProvider.getFingerprintOf(c);
-  println(c.id + " : " + fp.getJobs());
+  println(c.id);
 }
 
 def printCounter(String param) {
