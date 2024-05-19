@@ -1,15 +1,4 @@
 
-import com.cloudbees.plugins.credentials.CredentialsProvider;
-import com.cloudbees.plugins.credentials.Credentials;
-
-def creds = CredentialsProvider.lookupCredentials(
-    Credentials.class
-);
-
-for (c in creds) {
-  fp = CredentialsProvider.getFingerprintOf(c);
-  println(c.id);
-}
 
 def printCounter(String param) {
     echo "Common function called with parameter: ${param}"
