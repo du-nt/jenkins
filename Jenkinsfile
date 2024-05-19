@@ -8,7 +8,7 @@ pipeline {
                     def commonFunction = load './commonFunction.groovy'
                     
                     // Call the function and get the result
-                    def result = commonFunction('Hello, Jenkins!')
+                    def result = commonFunction.call('Hello, Jenkins!')
                     
                     // Use the returned parameters
                     echo "Function returned status: ${result.status}"
