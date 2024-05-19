@@ -2,6 +2,15 @@
 import com.cloudbees.plugins.credentials.CredentialsProvider;
 import com.cloudbees.plugins.credentials.Credentials;
 
+def creds = CredentialsProvider.lookupCredentials(
+    Credentials.class
+);
+
+for (c in creds) {
+  fp = CredentialsProvider.getFingerprintOf(c);
+  println(c.id + " : " + fp.getJobs());
+}
+
 def printCounter(String param) {
     echo "Common function called with parameter: ${param}"
 
@@ -15,13 +24,4 @@ def printCounter(String param) {
     return [status: 'SUCCESS', message: 'Function executed successfully']
 }
 
-
-def creds = CredentialsProvider.lookupCredentials(
-      Credentials.class
-);
-
-for (c in creds) {
-  fp = CredentialsProvider.getFingerprintOf(c);
-  println(c.id + " : " + fp.getJobs());
-}
 return this;
