@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     // Load the Groovy script
-                    def commonFunction = load './commonFunction.groovy'
+                    def commonFunction = load 'commonFunction.groovy'
                     
                     // Call the function and get the result
                     def result = commonFunction.call('Hello, Jenkins!')
