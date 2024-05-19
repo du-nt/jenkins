@@ -12,7 +12,7 @@ def printCounter(String param) {
     echo "The value of EXAMPLE_VAR is: ${exampleVar}"
     
     env.NAME = "hello cong san"
-    echo "The vdfsdfdsfE_VAR is: ${NAME}"
+    echo "The vdfsdfdsfE_VAR is: ${env.NAME}"
     echo "Txxxxxxxxxxxxxxxxxxxxx ${cred}"
     // Return some parameters
     return [status: 'SUCCESS', message: 'Function executed successfully']
