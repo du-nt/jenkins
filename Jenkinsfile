@@ -10,6 +10,8 @@ pipeline {
                     // Use the returned parameters
                     echo "Function returned status: ${result.status}"
                     echo "Function returned message: ${result.message}"
+
+                    echo "The value of MY_VAR is: ${env.MY_VAR}"
                 }
             }
         }
