@@ -1,12 +1,10 @@
 pipeline {
-    environment {
-        def utils = load 'utils.groovy'
-    }
     agent any
     stages {
         stage('Call Common Function') {
             steps {
                 script {
+                    def utils = load 'utils.groovy'
                     utils.step1()
                 }
             }
