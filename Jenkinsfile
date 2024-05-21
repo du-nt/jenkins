@@ -1,37 +1,13 @@
-def utils
-
 pipeline {
     agent any
     stages {
-        stage('Call Common Function') {
+        stage ('変数設定/初期化' ){
             steps {
                 script {
-                    utils = load 'utils.groovy'
-                    utils.step1()
+                    def dynamicVars = load 'dynamicVars.groovy'
+                    def vars = dynamicVars(projectId: 'DEV')
                 }
             }
-        }
-        stage('Call Common Function 2') {
-            steps {
-                script {
-                    utils.step2()
-                }
-            }
-        }
-        stage('Call Common Function ') {
-            steps {
-                script {
-                    utils.step3()
-                }
-            }
-        }
-    }
-    post {
-        always {
-            echo 'This will always run'
-            script {
-                    utils.step4()
-                }
         }
     }
 }
