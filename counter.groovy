@@ -1,15 +1,20 @@
 
 
-def printCounter(String param) {
+def call(String param) {
     echo "Common function called with parameter: ${param}"
 
-    def exampleVar = env.env_ne
-    echo "The value of EXAMPLE_VAR is: ${exampleVar}"
+    def buildId = env.BUILD_ID
+    echo "The value of BUILD_ID is: ${buildId}"
     
-    env.NAME = "hello cong san"
-    echo "The vdfsdfdsfE_VAR is: ${env.NAME}"
+    env.EXAMPLE_VAR = "TESTTTTTTTTTTTTTTTTTTTTT"
+    echo "The value of EXAMPLE_VAR is: ${env.EXAMPLE_VAR}"
 
-    // Return some parameters
+    script{
+        withCredentials([file(credentialsId: "wif-config-file", variable: 'GC_KEY')]) {
+                sh 'echo $GC_KEY'
+            }
+        }
+
     return [status: 'SUCCESS', message: 'Function executed successfully']
 }
 

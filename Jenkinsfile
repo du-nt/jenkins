@@ -11,7 +11,7 @@ pipeline {
                     echo "Function returned status: ${result.status}"
                     echo "Function returned message: ${result.message}"
 
-                    echo "The value of MY_VAR is: ${env.NAME}"
+                    echo "The value of EXAMPLE_VAR is: ${env.EXAMPLE_VAR}"
                 }
             }
         }
