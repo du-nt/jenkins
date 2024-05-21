@@ -8,7 +8,7 @@ pipeline {
                 script {
                     echo 'Hello World'
                     def dynamicVars = load 'dynamicVars.groovy'
-                    def vars = dynamicVars(projectId : "DEV")
+                    vars = dynamicVars(projectId : "DEV")
                     echo "Variables: ${vars}"
                 }
             }
