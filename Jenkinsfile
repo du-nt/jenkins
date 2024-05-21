@@ -12,27 +12,5 @@ pipeline {
                 }
             }
         }
-        stage('Call Common Function 2') {
-            steps {
-                script {
-                    utils.step2()
-                }
-            }
         }
-        stage('Call Common Function ') {
-            steps {
-                script {
-                    utils.step3()
-                }
-            }
-        }
-    }
-    post {
-        always {
-            echo 'This will always run'
-            script {
-                    utils.step4()
-                }
-        }
-    }
 }
