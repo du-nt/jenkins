@@ -1,19 +1,19 @@
 def call(Map config = [:]) {
     def result = [:]
 
-    if (projectId == "DEV") {
-        config.secretId = 'atomic-dev'
-        config.bucketName = 'bucket-dev'
-        config.region = 'us-central1'
-        config.zone = 'us-central1-a'
+    if (config.projectId == "DEV") {
+        result.secretId = 'atomic-dev'
+        result.bucketName = 'bucket-dev'
+        result.region = 'us-central1'
+        result.zone = 'us-central1-a'
     } else {
-        config.secretId = 'atomic-prod'
-        config.bucketName = 'bucket-prod'
-        config.region = 'us-central1'
-        config.zone = 'us-central1-a'
+        result.secretId = 'atomic-prod'
+        result.bucketName = 'bucket-prod'
+        result.region = 'us-central1'
+        result.zone = 'us-central1-a'
     }
 
-    return config
+    return result
 }
 
 return this
