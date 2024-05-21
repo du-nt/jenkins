@@ -21,4 +21,9 @@ def step3() {
         }
 }
 
+def step4() {
+    echo "Step 4"
+    echo "Ended"
+}
+
 return this;
