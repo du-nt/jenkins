@@ -11,15 +11,15 @@ pipeline {
                 }
             }
         }
-        post {
-            utils.step2()
-        }
         stage('Call Common Function 2') {
             steps {
                 script {
-                    utils.step3()
+                    utils.step2()
                 }
             }
         }
     }
+    post {
+            utils.step3()
+        }
 }
