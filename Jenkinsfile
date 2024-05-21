@@ -8,7 +8,7 @@ pipeline {
                 script {
                     utils = load 'utils.groovy'
                     utils.step1()
-                    echo "The value of EXAMPLE_VAR is: ${env.EXAMPLE_VAR}"
+                    echo "The value of EXAMPLE_VAR is: " + EXAMPLE_VAR
                 }
             }
         }
