@@ -6,16 +6,10 @@ def step1() {
 }
 
 def step2() {
-    echo "Step 1"
+    echo "Step 2"
 
     env.EXAMPLE_VAR = "TESTTTTTTTTTTTTTTTTTTTTT"
     echo "The value of EXAMPLE_VAR is: ${env.EXAMPLE_VAR}"
-
-    script{
-        withCredentials([file(credentialsId: "wif-config-file", variable: 'GC_KEY')]) {
-                sh 'echo $GC_KEY'
-            }
-        }
 }
 
 def step3() {
