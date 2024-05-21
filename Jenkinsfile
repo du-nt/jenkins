@@ -29,7 +29,9 @@ pipeline {
     post {
         always {
             echo 'This will always run'
-            utils.step4()
+            script {
+                    utils.step4()
+                }
         }
     }
 }
