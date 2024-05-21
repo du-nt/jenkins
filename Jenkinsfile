@@ -14,7 +14,7 @@ pipeline {
     }
     parameters {
         script {
-      return mySharedLibrary.getChoices("https://api.example.com") // Call function and return choicesdef dynamicVars = load 'dynamicVars.groovy'
+                    def dynamicVars = load 'dynamicVars.groovy'
                     def vars = dynamicVars(projectId : "DEV")
                     echo "Variables: ${vars}"
     }
