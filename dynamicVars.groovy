@@ -12,6 +12,7 @@ def call(Map config = [:]) {
         config.region = 'us-central1'
         config.zone = 'us-central1-a'
     }
+
     return config
 }
 
