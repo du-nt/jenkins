@@ -18,8 +18,12 @@ pipeline {
                 }
             }
         }
-    }
-    post {
-            utils.step3()
+        stage('Call Common Function ') {
+            steps {
+                script {
+                    utils.step3()
+                }
+            }
         }
+    }
 }
