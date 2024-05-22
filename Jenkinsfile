@@ -1,3 +1,5 @@
+def vars = [:]
+
 pipeline {
     environment {
         gcloud = "/var/local/google-cloud-sdk/bin/gcloud --project=$GCP_PROJECT_ID "
@@ -10,7 +12,7 @@ pipeline {
                     GCP_PROJECT_ID = "du-project"
                     echo 'Hello World'
                     def dynamicVars = load 'dynamicVars.groovy'
-                    def vars = dynamicVars(projectId : "DEV")
+                    vars = dynamicVars(projectId : "DEV")
                     echo "Variables: ${vars}"
                 }
             }
@@ -18,7 +20,7 @@ pipeline {
         stage('GCPコマンド認証') {
       steps{
         script{
-           sh script: '${gcloud} auth activate-service-account'
+           echo "Variables: ${vars.key}"
         }
       }
     }

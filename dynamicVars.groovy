@@ -1,6 +1,11 @@
 def call(Map config = [:]) {
     def result = [:]
 
+    withCredentials([file(credentialsId: "wif-config-file", variable: 'GC_KEY')]) {
+                result.key = GC_KEY
+            }
+        }
+
     if (config.projectId == "DEV") {
         result.secretId = 'atomic-dev'
         result.bucketName = 'bucket-dev'
