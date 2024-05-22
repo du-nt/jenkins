@@ -4,7 +4,6 @@ def call(Map config = [:]) {
     withCredentials([file(credentialsId: "wif-config-file", variable: 'GC_KEY')]) {
                 result.key = GC_KEY
             }
-        }
 
     if (config.projectId == "DEV") {
         result.secretId = 'atomic-dev'
