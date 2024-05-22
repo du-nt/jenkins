@@ -18,7 +18,7 @@ pipeline {
         stage('GCPコマンド認証') {
       steps{
         script{
-          echo "Variables: ${gcloud}"
+           sh script: '${gcloud} auth activate-service-account'
         }
       }
     }
