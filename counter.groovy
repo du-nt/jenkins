@@ -1,5 +1,3 @@
-
-
 def call(String param) {
     echo "Common function called with parameter: ${param}"
 
